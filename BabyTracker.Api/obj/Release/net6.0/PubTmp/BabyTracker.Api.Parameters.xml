@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="IIS Web Application Name" description="" value="BabyTrackerCapstone" tags="IisApp">
-    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\bgh15\\Capstone_4901_Fall_2022-1\\BabyTrackerBackEnd\\BabyTracker\.Api\\obj\\Release\\net6\.0\\PubTmp\\Out\\$" />
+  <parameter name="IIS Web Application Name" description="" value="BabyTrackerApi20230204172001" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\BabyTrackerBackEnd\\BabyTrackerBackEnd-prod\\BabyTracker\.Api\\obj\\Release\\net6\.0\\PubTmp\\Out\\$" />
   </parameter>
 </parameters>

@@ -10,3 +10,15 @@ C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Core\obj
 C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Core\obj\Release\net6.0\refint\BabyTracker.Core.dll
 C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Core\obj\Release\net6.0\BabyTracker.Core.pdb
 C:\Users\bgh15\Capstone_4901_Fall_2022-1\BabyTrackerBackEnd\BabyTracker.Core\obj\Release\net6.0\ref\BabyTracker.Core.dll
+D:\BabyTrackerBackEnd\BabyTrackerBackEnd-prod\BabyTracker.Core\bin\Release\net6.0\BabyTracker.Core.deps.json
+D:\BabyTrackerBackEnd\BabyTrackerBackEnd-prod\BabyTracker.Core\bin\Release\net6.0\BabyTracker.Core.dll
+D:\BabyTrackerBackEnd\BabyTrackerBackEnd-prod\BabyTracker.Core\bin\Release\net6.0\BabyTracker.Core.pdb
+D:\BabyTrackerBackEnd\BabyTrackerBackEnd-prod\BabyTracker.Core\obj\Release\net6.0\BabyTracker.Core.csproj.AssemblyReference.cache
+D:\BabyTrackerBackEnd\BabyTrackerBackEnd-prod\BabyTracker.Core\obj\Release\net6.0\BabyTracker.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\BabyTrackerBackEnd\BabyTrackerBackEnd-prod\BabyTracker.Core\obj\Release\net6.0\BabyTracker.Core.AssemblyInfoInputs.cache
+D:\BabyTrackerBackEnd\BabyTrackerBackEnd-prod\BabyTracker.Core\obj\Release\net6.0\BabyTracker.Core.AssemblyInfo.cs
+D:\BabyTrackerBackEnd\BabyTrackerBackEnd-prod\BabyTracker.Core\obj\Release\net6.0\BabyTracker.Core.csproj.CoreCompileInputs.cache
+D:\BabyTrackerBackEnd\BabyTrackerBackEnd-prod\BabyTracker.Core\obj\Release\net6.0\BabyTracker.Core.dll
+D:\BabyTrackerBackEnd\BabyTrackerBackEnd-prod\BabyTracker.Core\obj\Release\net6.0\refint\BabyTracker.Core.dll
+D:\BabyTrackerBackEnd\BabyTrackerBackEnd-prod\BabyTracker.Core\obj\Release\net6.0\BabyTracker.Core.pdb
+D:\BabyTrackerBackEnd\BabyTrackerBackEnd-prod\BabyTracker.Core\obj\Release\net6.0\ref\BabyTracker.Core.dll

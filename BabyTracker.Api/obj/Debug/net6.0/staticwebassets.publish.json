@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "LU19oMjVeF3Q+Zts/QQXbGrplHXD34yDziIjXo4KGZA=",
+  "Source": "BabyTracker.Api",
+  "BasePath": "_content/BabyTracker.Api",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

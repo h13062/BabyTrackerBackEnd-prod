@@ -50,12 +50,11 @@ builder.Services.AddSwaggerGen(c =>
 });
 builder.Services.AddCors(options =>
 {
-    options.AddDefaultPolicy(builder =>
-    {
-        //builder.WithOrigins("https://localhost:7290").AllowAnyHeader().AllowAnyMethod();
-        //builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
-        builder.WithOrigins("exp://192.168.254.208:19000").AllowAnyHeader().AllowAnyMethod();
-    });
+    options.AddPolicy("CorsPolicy",
+            builder => builder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials());
 });
 
 builder.Services.AddSqlServer<BabyTrackerDbContext>(builder.Configuration.GetConnectionString("OnlineBabyTracker"));
@@ -103,14 +102,18 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseDeveloperExceptionPage(); 
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
-app.UseCors();
-app.UseAuthorization();
+
+app.UseCors("CorsPolicy");
+
+//app.UseAuthorization();
 app.UseAuthentication();
+
 app.MapControllers();
 
 app.Run();
