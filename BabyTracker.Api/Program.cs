@@ -6,6 +6,7 @@ using BabyTracker.Infrastructure.Repository;
 using BabyTracker.Infrastructure.Service;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
@@ -21,7 +22,7 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "JWT Token",
+        Title = "BabyTracker",
         Version = "v1",
     });
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
@@ -53,11 +54,21 @@ builder.Services.AddCors(options =>
     options.AddPolicy("CorsPolicy",
             builder => builder.AllowAnyOrigin()
                 .AllowAnyMethod()
-                .AllowAnyHeader()
-                .AllowCredentials());
+                .AllowAnyHeader());
+                //.AllowCredentials());
 });
 
-builder.Services.AddSqlServer<BabyTrackerDbContext>(builder.Configuration.GetConnectionString("OnlineBabyTracker"));
+//builder.Services.AddSqlServer<BabyTrackerDbContext>(builder.Configuration.GetConnectionString("OnlineBabyTracker"));
+builder.Services.AddDbContext<BabyTrackerDbContext>(options =>
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("OnlineBabyTracker"),
+        sqlServerOptionsAction: sqlOptions =>
+        {
+            sqlOptions.EnableRetryOnFailure(
+                maxRetryCount: 5,
+                maxRetryDelay: TimeSpan.FromSeconds(30),
+                errorNumbersToAdd: null);
+        }));
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<BabyTrackerDbContext>()
     .AddDefaultTokenProviders();
@@ -103,6 +114,11 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage(); 
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+else
+{
     app.UseSwagger();
     app.UseSwaggerUI();
 }
