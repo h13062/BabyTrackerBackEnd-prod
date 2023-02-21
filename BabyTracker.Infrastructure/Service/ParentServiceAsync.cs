@@ -35,24 +35,36 @@ namespace BabyTracker.Infrastructure.Service
 
         public async Task<IEnumerable<ParentResponseModel>> GetAllAsync()
         {
-            var collection = await _parentRepositoryAsync.GetAllAsync();
-            if (collection != null)
+            try
             {
-                List<ParentResponseModel> result = new List<ParentResponseModel>();
-                foreach (var item in collection)
+                var collection = await _parentRepositoryAsync.GetAllAsync();
+                if (collection != null)
                 {
-                    ParentResponseModel model = new ParentResponseModel();
-                    model.Id = item.Id;
-                    model.Name = item.Name;
-                    var par = await _parentRepositoryAsync.GetByIdAsync(item.BabyId);
-                    model.BabyId = par.BabyId;
-                    
-                    result.Add(model);
+                    List<ParentResponseModel> result = new List<ParentResponseModel>();
+                    foreach (var item in collection)
+                    {
+                        ParentResponseModel model = new ParentResponseModel();
+                        model.Id = item.Id;
+                        model.Name = item.Name;
+                        try
+                        {
+                            var par = await _parentRepositoryAsync.GetByIdAsync(item.BabyId);
+                            model.BabyId = par.BabyId;
+                            result.Add(model);
+                        }
+                        catch(Exception ex)
+                        {
+                            throw new Exception("An error has occur while calling GetByIdAsync", ex);
+                        }
+                    }
+                    return result;
                 }
-                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("An error has occur", ex);
             }
             return null;
-
         }
 
         public async Task<ParentResponseModel> GetByIdAsync(int id)

@@ -1,21 +1,29 @@
 ﻿using BabyTracker.Core.Entity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 
 namespace BabyTracker.Infrastructure.Data
 {
-    public class BabyTrackerDbContext : IdentityDbContext<ApplicationUser>
+    public class BabyTrackerDbContext : IdentityDbContext<IdentityUser>
     {
         public BabyTrackerDbContext(DbContextOptions<BabyTrackerDbContext> option) : base(option)
         {
-
         }
- 
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            // Remove the token tables
+            builder.Entity<IdentityUserToken<string>>().ToTable("AspNetUserTokens");
+            builder.Entity<IdentityUserLogin<string>>().ToTable("AspNetUserLogins");
+            builder.Entity<IdentityUserClaim<string>>().ToTable("AspNetUserClaims");
+            builder.Entity<IdentityRole>().ToTable("AspNetRoles");
+            builder.Entity<IdentityUserRole<string>>().ToTable("AspNetUserRoles");
+            builder.Entity<IdentityUser>().ToTable("AspNetUsers");
+        }
+
         public DbSet<Baby> Babys { get; set; }
 
         public DbSet<BabySitter> BabySitters { get; set; }
