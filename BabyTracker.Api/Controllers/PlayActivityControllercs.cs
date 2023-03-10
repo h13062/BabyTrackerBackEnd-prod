@@ -32,7 +32,7 @@ namespace BabyTracker.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(PlayActivityModel model)
+        public async Task<IActionResult> Post(PlayActivityRequestModel model)
         {
             var result = await _playActivityServiceAsync.AddPlayAsync(model);
             if (result != 0)

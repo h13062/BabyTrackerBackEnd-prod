@@ -17,7 +17,8 @@ namespace BabyTracker.Core.Model
         [MaxLength(50)]
         public string Name { get; set; }
 
-        public int BabyId { get; set; }
+       // public int BabyId { get; set; }
+        public Baby? Baby { get; set; }
 
     }
 }

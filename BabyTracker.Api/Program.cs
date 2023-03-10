@@ -69,7 +69,7 @@ builder.Services.AddDbContext<BabyTrackerDbContext>(options =>
                 maxRetryDelay: TimeSpan.FromSeconds(30),
                 errorNumbersToAdd: null);
         }));
-builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
     .AddEntityFrameworkStores<BabyTrackerDbContext>()
     .AddDefaultTokenProviders();
 builder.Services.AddAuthentication(options =>
@@ -98,7 +98,7 @@ builder.Services.AddScoped<IParentRepositoryAsync, ParentRepositoryAsync>();
 builder.Services.AddScoped<IEatActivityRepositoryAsync, EatActivityRepositoryAsync>();
 builder.Services.AddScoped<IPlayActivityRepositoryAsync,PlayActivityRepositoryAsync>();
 builder.Services.AddScoped<ISleepActivityRepositoryAsync, SleepActivityRepositoryAsync>();
-builder.Services.AddScoped<IAccountRepositoryAsync, AccountRepositoryAsync>();
+//builder.Services.AddScoped<IAccountRepositoryAsync, AccountRepositoryAsync>();
 
 
 builder.Services.AddScoped<IBabyServiceAsync, BabyServiceAsync>();
@@ -107,7 +107,7 @@ builder.Services.AddScoped<IParentServiceAsync,ParentServiceAsync>();
 builder.Services.AddScoped<IEatActivyServiceAsync, EatActivityServiceAsync>();
 builder.Services.AddScoped<IPlayActivtyServiceAsync, PlayActivityServiceAsync>();
 builder.Services.AddScoped<IPlayActivityServiceAsync, SleepActivityServiceAsync>();
-builder.Services.AddScoped<IAccountServiceAsync, AccountServiceAsync>();
+//builder.Services.AddScoped<IAccountServiceAsync, AccountServiceAsync>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

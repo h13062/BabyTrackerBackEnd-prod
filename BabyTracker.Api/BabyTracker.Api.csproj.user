@@ -4,7 +4,7 @@
     <Controller_SelectedScaffolderID>ApiControllerEmptyScaffolder</Controller_SelectedScaffolderID>
     <Controller_SelectedScaffolderCategoryPath>root/Common/Api</Controller_SelectedScaffolderCategoryPath>
     <ActiveDebugProfile>BabyTracker.Api</ActiveDebugProfile>
-    <NameOfLastUsedPublishProfile>D:\BabyTrackerBackEnd\BabyTrackerBackEnd-prod\BabyTracker.Api\Properties\PublishProfiles\CapStone54 - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>D:\BabyTrackerBackEnd\BabyTrackerBackEnd-prod\BabyTracker.Api\Properties\PublishProfiles\CapStone54 - Web Deploy2.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
